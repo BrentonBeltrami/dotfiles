@@ -2,6 +2,11 @@
 syntax on "turn on syntax highlighting
 set background=dark "set background to dark
 set number relativenumber "set relative number
+" 'default line number is too distractive' - Montana
+hi clear LineNr
+hi link LineNr Comment
+hi link OverLength Error
+
 set cursorline "set row line for cursor
 set tabstop=2 "reduce indentation
 set shiftwidth=2
@@ -70,6 +75,7 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-fugitive'
+	Plug 'machakann/vim-highlightedyank'
 
 "Styling plugins
 	Plug 'vim-airline/vim-airline'
@@ -78,15 +84,20 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'folke/todo-comments.nvim'
 
 "Webdev plugins
+	Plug 'pangloss/vim-javascript'
+	Plug 'mxw/vim-jsx'
+	Plug 'leafgarland/typescript-vim'
 	Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 	Plug 'mattn/emmet-vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 
-"Prose plugings
-Plug 'junegunn/goyo.vim'
-
 "Testing
+Plug 'joshdick/onedark.vim'
+
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'sheerun/vim-polyglot'
+
 call plug#end()
 
 "NERDTree
