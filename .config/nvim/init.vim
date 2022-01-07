@@ -6,7 +6,6 @@ set number relativenumber "set relative number
 hi clear LineNr
 hi link LineNr Comment
 hi link OverLength Error
-
 set cursorline "set row line for cursor
 set tabstop=2 "reduce indentation
 set shiftwidth=2
@@ -14,6 +13,7 @@ set hidden
 set nowrap
 set list
 set showmatch
+set title
 set listchars=tab:\ \ ,trail:·
 :highlight NonText ctermfg=16 guifg=#61E8E1
 :highlight EndOfBuffer guifg=bg
