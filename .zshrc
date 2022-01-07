@@ -1,5 +1,13 @@
+alias tmux='tmux -2'
 # launch tmux on start
-[[ $TERM != "screen" ]] && exec tmux
+tmux attach &> /dev/null
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux -2
+fi
+#[[ $- != *i* ]] && return
+#[[ $TERM != screen* ]] && exec tmux -2
+#export TERM=xterm-256color
+
 
 # source prompt file
 source ~/.config/zshell/prompt
