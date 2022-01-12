@@ -3,6 +3,7 @@ alias newmain="git checkout temp; git branch -D main; git fetch; git checkout ma
 alias pullmain="git checkout main; git pull origin main"
 alias newmaster="git checkout temp; git branch -D master; git fetch; git checkout master"
 alias pullmaster="git checkout master; git pull origin master"
+alias deletebranches='git branch | grep -v "master\|^*" | xargs git branch -D '
 
 alias gs="~/.config/scripts/format-with-prettier.sh && clear && git status"
 
