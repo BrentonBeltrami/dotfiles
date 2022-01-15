@@ -107,9 +107,9 @@ nnoremap <expr> <leader>t g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' 
 
 "Prettier
 packloadall
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
-let g:prettier#config#tab_width = 1
+"let g:prettier#autoformat = 1
+"let g:prettier#autoformat_require_pragma = 0
+"let g:prettier#config#tab_width = 1
 
 "emmet
 let g:user_emmet_leader_key=','
