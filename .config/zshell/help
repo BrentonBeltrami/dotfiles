@@ -4,7 +4,7 @@ Options:
     pullmain              Switch to main & update local main from any branch
     newmaster             Nuke local master & rebuild from remote
     pullmaster            Switch to master & update local master from any branch
-    deleteallbranches     Deletes all branches except main/master & current branch
+    deletebranches        Deletes all branches except main/master & current branch
 
   React Alias:
     adts                  Add typescript to a project
