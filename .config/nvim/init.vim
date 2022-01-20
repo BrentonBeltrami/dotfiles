@@ -67,7 +67,7 @@ cmap Gdiff Gdiffsplit!
 "PLUGINS
 call plug#begin(stdpath('data') . '/plugged')
 
-"fucntional plugins
+"functional plugins
 	Plug 'preservim/nerdtree'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
@@ -94,6 +94,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 "Testing
 Plug 'joshdick/onedark.vim'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
