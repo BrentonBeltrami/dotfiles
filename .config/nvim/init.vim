@@ -124,6 +124,7 @@ inoremap <silent><expr> <TAB>
 			\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> gr <Plug>(coc-references)
 
 "Fzf
 nnoremap <leader>n :GFiles<cr>
