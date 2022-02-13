@@ -98,6 +98,7 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc-eslint'
 
 call plug#end()
 
@@ -108,9 +109,15 @@ nnoremap <expr> <leader>t g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' 
 
 "Prettier
 packloadall
-"let g:prettier#autoformat = 1
-"let g:prettier#autoformat_require_pragma = 0
-"let g:prettier#config#tab_width = 1
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#tabwidth = 6
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#jsx_single_quote = 'true'
+let g:prettier#config#semi = 'true'
+let g:prettier#config#trailing_comma = 'all'
+
 
 "emmet
 let g:user_emmet_leader_key=','
