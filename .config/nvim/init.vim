@@ -87,6 +87,7 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'pangloss/vim-javascript'
 	Plug 'mxw/vim-jsx'
 	Plug 'leafgarland/typescript-vim'
+	Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 	Plug 'mattn/emmet-vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
@@ -94,6 +95,7 @@ call plug#begin(stdpath('data') . '/plugged')
 "Testing
 Plug 'joshdick/onedark.vim'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'rmagatti/alternate-toggler'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
@@ -105,6 +107,18 @@ call plug#end()
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 nnoremap <expr> <leader>t g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+
+"Prettier
+"packloadall
+"let g:prettier#autoformat = 1
+"let g:prettier#autoformat_require_pragma = 0
+"let g:prettier#config#use_tabs = 'false'
+"let g:prettier#config#tabwidth = 6
+"let g:prettier#config#single_quote = 'true'
+"let g:prettier#config#jsx_single_quote = 'true'
+"let g:prettier#config#semi = 'true'
+"let g:prettier#config#trailing_comma = 'all'
+
 
 "emmet
 let g:user_emmet_leader_key=','
@@ -132,6 +146,9 @@ set noshowmode
 " Fugitive
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gr :Gread<CR>
+
+" Toggler
+nnoremap <leader>b :ToggleAlternate<CR>
 
 
 "SKELETON

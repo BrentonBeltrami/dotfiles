@@ -1,14 +1,12 @@
-# cottage
-alias cottage="cd ~/Desktop/Software_development/cottage/cottage-app"
-alias cotstart="~/.config/zshell/scripts/cottagestart.sh"
-alias format="npm run prettier-format"
+# backchannel
+alias bc="cd ~/sd/backchannel/backchannel-web"
 
 # the peoples advocacy group
-alias tpag="cd ~/Desktop/Software_development/freelance_projects/client_websites/tpag-next"
+alias tpag="cd ~/sd/freelance/The-Peoples-Advocacy-Group"
 
-# comedy humboldt
-alias comedy="cd ~/Desktop/Software_development/freelance_projects/client_websites/comedy-humboldt-next"
+# the peoples advocacy group
+alias pm="cd ~/sd/project-marketplace"
 
 # Notes
 #alias notes="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/San\ Junipero/Daily\ Notes"
-alias notes="~/dailynotes/.scripts/newDailyNote.sh"
+#alias notes="~/dailynotes/.scripts/newDailyNote.sh"

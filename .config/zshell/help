@@ -5,9 +5,14 @@ Options:
     newmaster             Nuke local master & rebuild from remote
     pullmaster            Switch to master & update local master from any branch
     deletebranches        Deletes all branches except main/master & current branch
+    gco                   Checkout a branch
+    gnew                  Checkout a new branch
+    pr                    Cretae a pull request
+    dpr                   Create a draft pull request
+    view                  View current pull request in web browser
 
   React Alias:
-    adts                  Add typescript to a project
+    addts                 Add typescript to a project
     jstots                Change JavaScript files to typescript files
     tailwindnext          Create a new Next.js project with Tailwind
 
@@ -15,7 +20,7 @@ Options:
     c                     Clear shell
     reload                Reload shell source
 
-  Shell Alias:
+  TMUX Alias:
     tv                    Split TMUX windows verticaly
     th                    Split TMUX windows horizontally
     tkill                 Kill TMUX pane
@@ -23,3 +28,9 @@ Options:
 
   Shell Alias:
     du -a /               Pretend to work
+
+  Projects Alias:
+    bc                    Jump to bc project
+    tpag                  Jump to tpag project
+    pm                    Jump to pm project
+
