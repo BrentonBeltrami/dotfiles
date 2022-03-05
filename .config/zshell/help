@@ -7,7 +7,9 @@ Options:
     deletebranches        Deletes all branches except main/master & current branch
     gco                   Checkout a branch
     gnew                  Checkout a new branch
-    pr                    Cretae a pull request
+
+  Github:
+    pr                    Create a pull request
     dpr                   Create a draft pull request
     view                  View current pull request in web browser
 
