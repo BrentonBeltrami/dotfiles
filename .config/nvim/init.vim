@@ -30,6 +30,7 @@ set listchars=tab:\ \ ,trail:·
 set path+=** "Search down into subfolders
 set wildmenu "display all matching files when tab complete
 set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,**/node_modules/**,**/dist/**,**/build/**,*.o,*.pyc,*.swp
+
 let mapleader = " " "set leader to space
 set scrolloff=4
 set sidescrolloff=8
@@ -69,8 +70,8 @@ call plug#begin(stdpath('data') . '/plugged')
 
 "functional plugins
 	Plug 'preservim/nerdtree'
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'airblade/vim-rooter'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-commentary'
@@ -135,8 +136,15 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gr <Plug>(coc-references)
 
-"Fzf
-nnoremap <leader>n :GFiles<cr>
+nnoremap <leader>n <cmd>:cho "Use space + ff"<cr>
+"Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fb <cmd>Telescope builtin<cr>
+lua << EOF
+require('telescope').setup{  defaults = { file_ignore_patterns = { "node_modules" }} }
+EOF
 
 "Airline
 let g:airline_theme = 'base16_dracula'
