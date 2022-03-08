@@ -1,4 +1,6 @@
 Options:
+  Notes:
+    note                  Open daily note
   Git Alias:
     newmain               Nuke local main & rebuild from remote
     pullmain              Switch to main & update local main from any branch

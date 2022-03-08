@@ -76,6 +76,7 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-fugitive'
 	Plug 'machakann/vim-highlightedyank'
+	Plug 'rmagatti/alternate-toggler'
 
 "Styling plugins
 	Plug 'vim-airline/vim-airline'
@@ -95,7 +96,7 @@ call plug#begin(stdpath('data') . '/plugged')
 "Testing
 Plug 'joshdick/onedark.vim'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'rmagatti/alternate-toggler'
+Plug 'lervag/wiki.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
@@ -150,6 +151,10 @@ nnoremap <leader>gr :Gread<CR>
 " Toggler
 nnoremap <leader>b :ToggleAlternate<CR>
 
+" vimwiki
+let g:wiki_root = '~/notes'
+let g:wiki_filetypes = ['md']
+let g:wiki_link_extension = '.md'
 
 "SKELETON
 nnoremap <leader>rt :-1read $HOME/.config/nvim/skeleton/react_tsx<cr>8gg0fEciw<C-r>=expand("%:t")<CR><Esc>2b2dw

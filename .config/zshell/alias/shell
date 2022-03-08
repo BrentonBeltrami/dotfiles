@@ -6,3 +6,6 @@ alias :q='clear'
 alias :q!='clear'
 
 alias reload='source ~/.zshenv'
+
+alias note='nvim +WikiJournal'
+alias notes='nvim +WikiJournal'
