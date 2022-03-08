@@ -27,13 +27,9 @@ set listchars=tab:\ \ ,trail:·
 
 
 "FUNCTIONALITY
-set path+=** "Search down into subfolders
-set wildmenu "display all matching files when tab complete
-set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,**/node_modules/**,**/dist/**,**/build/**,*.o,*.pyc,*.swp
-
 let mapleader = " " "set leader to space
-set scrolloff=4
-set sidescrolloff=8
+"set scrolloff=4
+"set sidescrolloff=8
 "allow :W to act as :w in vim command line
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 " Quicker switching between windows
@@ -41,21 +37,13 @@ nmap <silent> <C-h> <C-w>h
 nmap <silent> <C-j> <C-w>j
 nmap <silent> <C-k> <C-w>k
 nmap <silent> <C-l> <C-w>l
-" Reselect visual selection after indenting
-vnoremap < <gv
-vnoremap > >gv
 " Change operations go to blackhole register
 nnoremap c "_c
 nnoremap C "_C
 " Backspace switches to last buffer
 nnoremap <Backspace> <C-^>
-" Increment & deincremnet numbers
-nnoremap + <C-a>
-nnoremap - <C-x>
 
 "REMAPPINGS
-"open file under cursor in vertical split
-"nnoremap <C-w>f <C-w>f<C-w>L
 "access system clipboard
 nnoremap "" "*
 "remove 'v' from entering visual mode
@@ -98,6 +86,8 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'lervag/wiki.vim'
+Plug 'sudormrfbin/cheatsheet.nvim'
+Plug 'nvim-lua/popup.nvim'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
