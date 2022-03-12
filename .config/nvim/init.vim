@@ -1,4 +1,6 @@
-"STYLING
+" -----------------------------------------------------------------------------
+" STYLING
+" -----------------------------------------------------------------------------
 syntax on "turn on syntax highlighting
 set background=dark "set background to dark
 set number relativenumber "set relative number
@@ -18,18 +20,10 @@ set listchars=tab:\ \ ,trail:·
 :highlight NonText ctermfg=16 guifg=#61E8E1
 :highlight EndOfBuffer guifg=bg
 
-"error styling
-" CoC: {{{
-   hi! CocErrorSign ctermfg=cyan ctermbg=black
-   hi! CocInfoSign  ctermfg=yellow ctermbg=black
-"  }}}
-:hi Comment ctermfg=gray
-
-
-"FUNCTIONALITY
+" -----------------------------------------------------------------------------
+" FUNCTIONALITY
+" -----------------------------------------------------------------------------
 let mapleader = " " "set leader to space
-"set scrolloff=4
-"set sidescrolloff=8
 "allow :W to act as :w in vim command line
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 " Quicker switching between windows
@@ -48,17 +42,22 @@ nnoremap <Backspace> <C-^>
 nnoremap "" "*
 "remove 'v' from entering visual mode
 noremap v <Nop>
+"leader + n is now depreceated in favor for leader + ff
+nnoremap <leader>n <cmd>:cho "Use space + ff"<cr>
 "toggle relativenumber
 nmap <leader>p :set rnu!<cr>
 cmap Gdiff Gdiffsplit!
 
 
+" -----------------------------------------------------------------------------
 "PLUGINS
+" -----------------------------------------------------------------------------
 call plug#begin(stdpath('data') . '/plugged')
 
 "functional plugins
 	Plug 'preservim/nerdtree'
 	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-lua/popup.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'airblade/vim-rooter'
 	Plug 'tpope/vim-surround'
@@ -80,22 +79,27 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 	Plug 'mattn/emmet-vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'neoclide/coc-eslint'
 	Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
+
+"Prose
+	Plug 'lervag/wiki.vim'
+	Plug 'folke/zen-mode.nvim'
 
 "Testing
 Plug 'joshdick/onedark.vim'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'lervag/wiki.vim'
 Plug 'sudormrfbin/cheatsheet.nvim'
-Plug 'nvim-lua/popup.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc-eslint'
 
 call plug#end()
 
+" -----------------------------------------------------------------------------
 "NERDTree
+" -----------------------------------------------------------------------------
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 nnoremap <expr> <leader>t g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
@@ -112,22 +116,34 @@ nnoremap <expr> <leader>t g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' 
 "let g:prettier#config#trailing_comma = 'all'
 
 
+" -----------------------------------------------------------------------------
 "emmet
+" -----------------------------------------------------------------------------
 let g:user_emmet_leader_key=','
 
+" -----------------------------------------------------------------------------
 "Coc
+" -----------------------------------------------------------------------------
 let g:coc_global_extensions = [
 			\ 'coc-tsserver'
 			\]
+" CoC: {{{
+   hi! CocErrorSign ctermfg=cyan ctermbg=black
+   hi! CocWarningSign ctermfg=gray ctermbg=red
+   hi! CocInfoSign  ctermfg=yellow ctermbg=black
+"  }}}
+:hi Comment ctermfg=gray
 inoremap <silent><expr> <TAB>
 			\ pumvisible() ? "\<C-n>" :
 			\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gr <Plug>(coc-references)
 
-nnoremap <leader>n <cmd>:cho "Use space + ff"<cr>
+" -----------------------------------------------------------------------------
 "Telescope
+" -----------------------------------------------------------------------------
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -136,25 +152,63 @@ lua << EOF
 require('telescope').setup{  defaults = { file_ignore_patterns = { "node_modules" }} }
 EOF
 
+" -----------------------------------------------------------------------------
 "Airline
+" -----------------------------------------------------------------------------
 let g:airline_theme = 'base16_dracula'
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 set noshowmode
 
-" Fugitive
-nnoremap <leader>gw :Gwrite<CR>
-nnoremap <leader>gr :Gread<CR>
-
+" -----------------------------------------------------------------------------
 " Toggler
+" -----------------------------------------------------------------------------
 nnoremap <leader>b :ToggleAlternate<CR>
 
+" -----------------------------------------------------------------------------
+" ZenMode
+" -----------------------------------------------------------------------------
+nnoremap <leader>z :ZenMode<CR>
+lua << EOF
+  require("zen-mode").setup {
+		kitty = {
+			enabled = true,
+			font = "+4", -- font size increment
+		},
+  }
+EOF
+
+
+
+" -----------------------------------------------------------------------------
 " vimwiki
+" -----------------------------------------------------------------------------
 let g:wiki_root = '~/notes'
 let g:wiki_filetypes = ['md']
 let g:wiki_link_extension = '.md'
 
+" -----------------------------------------------------------------------------
+" gitsigns
+" -----------------------------------------------------------------------------
+lua << EOF
+require('gitsigns').setup({
+      current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+      current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+        delay = 0,
+        ignore_whitespace = true,
+      },
+      current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+})
+EOF
+nnoremap <leader>gb :Gitsigns toggle_current_line_blame<cr>
+highlight GitSignsCurrentLineBlame guibg=transparent guifg=lightgray
+
+
+" -----------------------------------------------------------------------------
 "SKELETON
+" -----------------------------------------------------------------------------
 nnoremap <leader>rt :-1read $HOME/.config/nvim/skeleton/react_tsx<cr>8gg0fEciw<C-r>=expand("%:t")<CR><Esc>2b2dw
 nnoremap <leader>rj :-1read $HOME/.config/nvim/skeleton/react_jsx<cr>3gg0fEciw<C-r>=expand("%:t")<CR><Esc>2b2dw
 nnoremap <leader>ignorevim :-1read $HOME/.config/nvim/skeleton/ignorevim<cr>
@@ -164,7 +218,9 @@ nnoremap <leader>api :-1read $HOME/.config/nvim/skeleton/node_api<cr>3gg0fAciw<C
 nnoremap <leader>hook :-1read $HOME/.config/nvim/skeleton/react_hook<cr>3gg0fHciw<C-r>=expand("%:t")<CR><Esc>GkfHciw<C-r>=expand("%:t")<CR><Esc>11ggfAciw
 nnoremap <leader>post :-1read $HOME/.config/nvim/skeleton/axois_post<cr>fFciw
 
+" -----------------------------------------------------------------------------
 "Testing
+" -----------------------------------------------------------------------------
 set termguicolors
 set signcolumn=yes:1
 highlight SignColumn guibg=#282a36 ctermbg=white
@@ -173,13 +229,10 @@ set updatetime=300 " Reduce time for highlighting other references
 set redrawtime=10000 " Allow more time for loading syntax on large files
 
 
+
 highlight IndentColor guifg=#1F5C53
 let g:indent_blankline_char_highlight_list = ['IndentColor']
 
 lua << EOF
-  require("todo-comments").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
+  require("todo-comments").setup {}
 EOF
