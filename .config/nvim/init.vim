@@ -17,8 +17,11 @@ set list
 set showmatch
 set title
 set listchars=tab:\ \ ,trail:·
-:highlight NonText ctermfg=16 guifg=#61E8E1
-:highlight EndOfBuffer guifg=bg
+:hi NonText ctermfg=16 guifg=#61E8E1
+:hi EndOfBuffer guifg=bg
+:hi CursorLine guibg=#343846
+:hi Pmenu guibg=black guifg=white
+:hi PmenuSel guibg=#1C1E26 guifg=#6BE6E6
 
 " -----------------------------------------------------------------------------
 " FUNCTIONALITY
@@ -127,11 +130,7 @@ let g:user_emmet_leader_key=','
 let g:coc_global_extensions = [
 			\ 'coc-tsserver'
 			\]
-" CoC: {{{
-   hi! CocErrorSign ctermfg=cyan ctermbg=black
-   hi! CocWarningSign ctermfg=gray ctermbg=red
-   hi! CocInfoSign  ctermfg=yellow ctermbg=black
-"  }}}
+
 :hi Comment ctermfg=gray
 inoremap <silent><expr> <TAB>
 			\ pumvisible() ? "\<C-n>" :
@@ -140,6 +139,13 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gr <Plug>(coc-references)
+
+"coc colors
+:hi CocErrorSign ctermbg=black
+:hi CocWarningSign ctermbg=black
+:hi CocInfoSign ctermbg=black
+:hi CocHintLine ctermbg=black
+:hi CocFloating ctermbg=black
 
 " -----------------------------------------------------------------------------
 "Telescope
