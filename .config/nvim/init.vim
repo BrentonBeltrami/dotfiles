@@ -107,18 +107,6 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 nnoremap <expr> <leader>t g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
 
-"Prettier
-"packloadall
-"let g:prettier#autoformat = 1
-"let g:prettier#autoformat_require_pragma = 0
-"let g:prettier#config#use_tabs = 'false'
-"let g:prettier#config#tabwidth = 6
-"let g:prettier#config#single_quote = 'true'
-"let g:prettier#config#jsx_single_quote = 'true'
-"let g:prettier#config#semi = 'true'
-"let g:prettier#config#trailing_comma = 'all'
-
-
 " -----------------------------------------------------------------------------
 "emmet
 " -----------------------------------------------------------------------------
