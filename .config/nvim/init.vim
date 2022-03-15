@@ -143,7 +143,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fb <cmd>Telescope builtin<cr>
 lua << EOF
-require('telescope').setup{  defaults = { file_ignore_patterns = { "node_modules" }} }
+require('telescope').setup{ defaults = { file_ignore_patterns = { "node_modules" }} }
 EOF
 
 " -----------------------------------------------------------------------------
