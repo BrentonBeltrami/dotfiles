@@ -6,9 +6,9 @@ alias pullmaster="git checkout master; git pull origin master"
 alias deletebranches='git branch | grep -v "main\|master\|^*" | xargs git branch -D '
 
 alias gs="~/.config/scripts/format-with-prettier.sh && clear && git status"
-
 alias gco="clear && git co"
 alias gnew="clear && git co -b"
+alias update="git commit --amend --no-edit --date \"$(date '+%a %d %b %Y %H:%M:%S %Z')\""
 
 alias pr="gh pr create"
 alias dpr="gh pr create --draft"
