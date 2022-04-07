@@ -2,7 +2,7 @@
 alias bc="cd ~/sd/backchannel/backchannel-web"
 
 # the peoples advocacy group
-alias tpag="cd ~/sd/freelance/The-Peoples-Advocacy-Group"
+alias tpag="cd ~/sd/The-Peoples-Advocacy-Group"
 
 # the peoples advocacy group
 alias pm="cd ~/sd/project-marketplace"
