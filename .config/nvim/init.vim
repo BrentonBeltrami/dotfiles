@@ -18,11 +18,17 @@ set list
 set showmatch
 set title
 set listchars=tab:\ \ ,trail:·
-:hi NonText ctermfg=16 guifg=#61E8E1
-:hi EndOfBuffer guifg=bg
-:hi CursorLine guibg=#343846
-:hi Pmenu guibg=black guifg=white
-:hi PmenuSel guibg=#1C1E26 guifg=#6BE6E6
+
+" COLORS
+set termguicolors
+set signcolumn=yes:1
+"hi NonText ctermfg=16 guifg=#61E8E1
+hi NonText guifg=#61E8E1
+hi EndOfBuffer guifg=bg
+hi CursorLine cterm=underline
+hi Pmenu cterm=underline guifg=bg guibg=fg
+hi PmenuSel guibg=fg guifg=bg
+hi SignColumn guibg=bg ctermbg=white
 
 " -----------------------------------------------------------------------------
 " FUNCTIONALITY
@@ -198,7 +204,7 @@ require('gitsigns').setup({
 })
 EOF
 nnoremap <leader>gb :Gitsigns toggle_current_line_blame<cr>
-highlight GitSignsCurrentLineBlame guibg=transparent guifg=lightgray
+highlight GitSignsCurrentLineBlame guibg=transparent guifg=bg
 
 
 " -----------------------------------------------------------------------------
@@ -216,17 +222,14 @@ nnoremap <leader>post :-1read $HOME/.config/nvim/skeleton/axois_post<cr>fFciw
 " -----------------------------------------------------------------------------
 "Testing
 " -----------------------------------------------------------------------------
-set termguicolors
-set signcolumn=yes:1
-highlight SignColumn guibg=#282a36 ctermbg=white
 set nojoinspaces
 set updatetime=300 " Reduce time for highlighting other references
 set redrawtime=10000 " Allow more time for loading syntax on large files
 
 
 
-highlight IndentColor guifg=#1F5C53
-let g:indent_blankline_char_highlight_list = ['IndentColor']
+"highlight IndentColor guifg=#1F5C53
+"let g:indent_blankline_char_highlight_list = ['IndentColor']
 
 lua << EOF
   require("todo-comments").setup {}
