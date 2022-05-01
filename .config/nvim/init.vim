@@ -27,7 +27,7 @@ hi NonText guifg=#61E8E1
 hi EndOfBuffer guifg=bg
 hi CursorLine cterm=underline
 hi Pmenu cterm=underline guifg=bg guibg=fg
-hi PmenuSel guibg=fg guifg=bg
+hi PmenuSel guibg=LightGray guifg=Black
 hi SignColumn guibg=bg ctermbg=white
 
 " -----------------------------------------------------------------------------
