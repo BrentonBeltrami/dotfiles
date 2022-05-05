@@ -33,9 +33,3 @@ Options:
 
   Shell Alias:
     du -a /               Pretend to work
-
-  Projects Alias:
-    bc                    Jump to bc project
-    tpag                  Jump to tpag project
-    pm                    Jump to pm project
-

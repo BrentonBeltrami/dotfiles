@@ -1,0 +1,9 @@
+{
+	"eslint.run": "onType",
+	"eslint.autoFixOnSave": true,
+	"typescript.suggest.autoImports": true,
+	"suggest.floatConfig": true,
+	"suggest.floatConfig": "#000000",
+	"diagnostic.floatConfig": true,
+	"signature.floatConfig": true
+}

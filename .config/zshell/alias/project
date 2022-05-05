@@ -4,9 +4,5 @@ alias bc="cd ~/sd/backchannel/backchannel-web"
 # the peoples advocacy group
 alias tpag="cd ~/sd/The-Peoples-Advocacy-Group"
 
-# the peoples advocacy group
+# project marketplace
 alias pm="cd ~/sd/project-marketplace"
-
-# Notes
-#alias notes="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/San\ Junipero/Daily\ Notes"
-#alias notes="~/dailynotes/.scripts/newDailyNote.sh"
