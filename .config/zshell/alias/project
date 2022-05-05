@@ -1,8 +1,0 @@
-# backchannel
-alias bc="cd ~/sd/backchannel/backchannel-web"
-
-# the peoples advocacy group
-alias tpag="cd ~/sd/The-Peoples-Advocacy-Group"
-
-# project marketplace
-alias pm="cd ~/sd/project-marketplace"
