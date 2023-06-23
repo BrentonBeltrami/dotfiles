@@ -1,0 +1,27 @@
+# IDE and editor files
+.vscode/
+*.swp
+*.swo
+*~
+
+# misc
+.DS_Store
+*.pem
+
+# raycast extensions
+/raycast/*
+
+# tmux plugins
+/tmux/plugins/*
+
+# karabiner backups
+/karabiner/automatic_backups/*
+
+# lvim lock file
+/lvim/lazy-lock.json
+
+# ingore gh keys
+/gh/hosts.yml
+
+# ingore copilot keys
+/github-copilot/hosts.json

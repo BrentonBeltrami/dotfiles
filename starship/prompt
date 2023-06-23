@@ -1,0 +1,33 @@
+# prompt
+#source ~/.config/git/git-prompt.sh
+#autoload -U colors && colors
+#NEWLINE=$'\n'
+#setopt PROMPT_SUBST ; PS1='%{$fg[magenta]%}%c %{$fg[green]%}$(__git_ps1 "(%s)") %{$reset_color%} ${NEWLINE}> '
+#alias reload='source ~/.zshrc'
+
+eval "$(starship init zsh)"
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#617073"
+function __smart_completion() {
+  if [ -n "$POSTDISPLAY" ]; then
+    zle autosuggest-accept
+  else
+    zle expand-or-complete
+  fi
+}
+
+zle -N __smart_completion
+bindkey '\t' __smart_completion
+
+function __smart_backward() {
+  if [ -n "$POSTDISPLAY" ]; then
+    zle autosuggest-clear
+  else
+    zle backward-delete-char
+  fi
+}
+
+zle -N __smart_backward
+bindkey '^H' __smart_backward
+

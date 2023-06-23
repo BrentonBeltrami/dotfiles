@@ -1,0 +1,43 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$nodejs\
+$cmd_duration $jobs $time\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
+[directory]
+truncation_length = 2
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]\) '
+
+[git_status]
+untracked = ' [?:${count}]()'
+staged = '[++\($count\)](green)'
+
+[nodejs]
+disabled = true
+
+[rust]
+# symbol = " "
+
+[time]
+disabled = false
+style = "bold white"
+format = "[$time]($style)"
