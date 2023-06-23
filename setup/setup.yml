@@ -3,18 +3,21 @@
   hosts: localhost
   become: false
   vars:
-    # brew_cask_packages:
-      # - slack
+    brew_cask_packages:
+      - slack
+      - linear-linear
+      - raycast
+      - zoom
     brew_packages:
-      - vale
       - stow
       - koekeishiya/formulae/yabai
       - koekeishiya/formulae/skhd
+      - vale
 
   tasks: 
-  # - name: Installing Homebrew Cask Packages
-  #   homebrew_cask:
-  #     name: "{{ brew_cask_packages }}"
+  - name: Installing Homebrew Cask Packages
+    homebrew_cask:
+      name: "{{ brew_cask_packages }}"
   - name: Installing Homebrew Packages
     homebrew:
       name: "{{ brew_packages }}"

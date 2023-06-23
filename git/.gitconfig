@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Brenton Beltrami
+	email = contact@brentonbeltrami.com
+[alias]
+	co = checkout
+	br = branch
+	ss = status --short
