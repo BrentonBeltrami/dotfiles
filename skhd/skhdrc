@@ -33,6 +33,7 @@ shift + alt - l : yabai -m window --swap east
 shift + alt - w : yabai -m window --display west; yabai -m display --focus west;
 shift + alt - b : yabai -m window --display east; yabai -m display --focus east;
 
-# shift + alt - n : yabai -m applicatoin --display east; yabai -m display --focus east;
-
-
+# assigned applications
+cmd + alt + shift - 1 : open /Applications/kitty.app
+cmd + alt + shift - 2 : open /Applications/arc.app
+cmd + alt + shift - 3 : open /Applications/slack.app

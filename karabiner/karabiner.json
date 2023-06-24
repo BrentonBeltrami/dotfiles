@@ -421,6 +421,26 @@
               "key_code": "close_bracket"
             }
           ]
+        },
+        {
+          "from": {
+            "key_code": "right_command"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "left_command"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ]
         }
       ],
       "virtual_hid_keyboard": {
