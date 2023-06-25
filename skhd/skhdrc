@@ -37,3 +37,4 @@ shift + alt - b : yabai -m window --display east; yabai -m display --focus east;
 cmd + alt + shift - 1 : open /Applications/kitty.app
 cmd + alt + shift - 2 : open /Applications/arc.app
 cmd + alt + shift - 3 : open /Applications/slack.app
+cmd + alt + shift - space : open /Applications/Raycast.app
