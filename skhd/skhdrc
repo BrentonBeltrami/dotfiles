@@ -38,5 +38,7 @@ cmd + alt + shift - v : open /Applications/kitty.app
 cmd + alt + shift - a : open /Applications/arc.app
 cmd + alt + shift - s : open /Applications/slack.app
 cmd + alt + shift - d : open /Applications/discord.app
+cmd + alt + shift - m : open -b com.apple.Music
 cmd + alt + shift - p : open /Applications/safari.app
+cmd + alt + shift - t : open /Applications/Things3.app
 cmd + alt + shift - space : open /Applications/Raycast.app
