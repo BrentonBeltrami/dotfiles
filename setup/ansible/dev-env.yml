@@ -1,0 +1,25 @@
+- hosts: all
+  vars:
+    brew_cask_packages:
+      - raycast
+    brew_packages:
+      - stow
+      - koekeishiya/formulae/yabai
+      - koekeishiya/formulae/skhd
+      - kitty
+      - gh
+      - tmux
+      - neovim
+      - lazygit
+      - ripgrep
+      - tldr
+      - vale
+
+    tasks: 
+    - name: Installing Homebrew Cask Packages
+      homebrew_cask:
+        name: "{{ brew_cask_packages }}"
+    - name: Installing Homebrew Packages
+      homebrew:
+        name: "{{ brew_packages }}"
+

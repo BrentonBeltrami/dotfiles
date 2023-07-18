@@ -1,0 +1,15 @@
+---
+- name: Install MacOS Packages
+  hosts: localhost
+  become: false
+  vars:
+    brew_cask_packages:
+      - slack
+      - linear-linear
+      - zoom
+
+    tasks: 
+    - name: Installing Homebrew Cask Packages
+      homebrew_cask:
+        name: "{{ brew_cask_packages }}"
+

@@ -2,22 +2,28 @@
 - name: Install MacOS Packages
   hosts: localhost
   become: false
-  vars:
-    brew_cask_packages:
-      - slack
-      - linear-linear
-      - raycast
-      - zoom
-    brew_packages:
-      - stow
-      - koekeishiya/formulae/yabai
-      - koekeishiya/formulae/skhd
-      - vale
+
+  pre_tasks:
+    - name: Ensuring Homebrew Is Installed
+      stat:
+        path: /usr/local/bin/brew
+      register: homebrew_check
+
+    - name: Fail If Homebrew Is Not Installed and install_homebrew_if_missing Is False
+      fail:
+        msg: Homebrew is missing...Install from http://brew.sh/
+        when:
+          - not homebrew_check.stat.exists
+          - not install_homebrew_if_missing
+
+    - name: Installing Homebrew
+      shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      when:
+        - not homebrew_check.stat.exists
+        - install_homebrew_if_missing
 
   tasks: 
-  - name: Installing Homebrew Cask Packages
-    homebrew_cask:
-      name: "{{ brew_cask_packages }}"
-  - name: Installing Homebrew Packages
-    homebrew:
-      name: "{{ brew_packages }}"
+  - include_tasks: ansible/dev-env.yml
+  - include_tasks: ansible/personal-tools.yml
+  - include_tasks: ansible/work-tools.yml
+
