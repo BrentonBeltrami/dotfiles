@@ -53,6 +53,8 @@ LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.
 brew install zoxide  # jump anywhere within your filesystem with z <foldername>
 brew install ripgrep # blazingly fast grep
 ```
+# Install gnu stow
+brew install stow
 
 ## Install Lazygit
 ```
@@ -73,6 +75,7 @@ brew install raycast
 ```
 brew install amethyst
 ```
+
 
 <!-- 
 TODO: Look into these utilities 

@@ -7,7 +7,7 @@
 
 eval "$(starship init zsh)"
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#617073"
 function __smart_completion() {
   if [ -n "$POSTDISPLAY" ]; then

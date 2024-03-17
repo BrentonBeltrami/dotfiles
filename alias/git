@@ -1,17 +1,3 @@
-# git
-alias newmain="git checkout temp; git branch -D main; git fetch; git checkout main"
-alias pullmain="git checkout main; git pull origin main"
-alias newmaster="git checkout temp; git branch -D master; git fetch; git checkout master"
-alias pullmaster="git checkout master; git pull origin master"
-alias deletebranches='git branch | grep -v "main\|master\|^*" | xargs git branch -D '
-
 alias gs="clear && git status"
-alias gco="clear && git co"
 alias gnew="clear && git co -b"
-alias update="~/.config/scripts/update-commit-date.sh"
-
-alias pr="gh pr create"
-alias dpr="gh pr create --draft"
 alias view="gh pr view --web"
-
- 

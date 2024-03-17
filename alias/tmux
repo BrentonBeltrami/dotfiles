@@ -1,5 +1,0 @@
-# colorize list
-alias tv="tmux split-window -h"
-alias th="tmux split-window"
-alias tkill="tmux kill-pane"
-alias tstart="tmux split-window -h; tmux select-pane -L; tmux split-window"

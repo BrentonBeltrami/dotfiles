@@ -8,9 +8,6 @@ alias :q!='clear'
 alias reload='source ~/.zshenv'
 alias theme='kitty +kitten themes'
 
-alias note='nvim +WikiJournal'
-alias notes='nvim +WikiJournal'
-
 alias linear='open -a linear'
 
 function take {

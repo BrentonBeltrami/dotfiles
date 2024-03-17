@@ -1,9 +1,5 @@
 # vim
-#alias v='nvim'
-#alias vi='nvim'
-#alias im='nvim'
-#alias vim='nvim'
-alias v='/Users/brentonbeltrami/.local/bin/lvim'
-alias vi='/Users/brentonbeltrami/.local/bin/lvim'
-alias vim='/Users/brentonbeltrami/.local/bin/lvim'
-alias im='/Users/brentonbeltrami/.local/bin/lvim'
+alias v='nvim'
+alias vi='nvim'
+alias im='nvim'
+alias vim='nvim'
