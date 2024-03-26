@@ -1,6 +1,6 @@
 # !/usr/bin/env bash
 
-document_path="$HOME/bragdoc.txt"
+document_path="$HOME/brain/bragdoc.txt"
 
 read -p "Enter text to append: " user_input
 
