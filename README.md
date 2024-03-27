@@ -8,7 +8,7 @@ xcode-select --install
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-## Install dotfiles
+## Clone dotfiles
 ```
 git clone https://github.com/BrentonBeltrami/dotfiles
 ```
