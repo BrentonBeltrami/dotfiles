@@ -24,11 +24,5 @@ ansible-playbook ~/.config/setup/setup.yml
 ```
 gh auth login
 ```
-
-<!-- 
-TODO: Look into these utilities 
-Setup nerd fonts
-Install lazyvim
-Setup yabai
--->
-
+## Setup yabai
+[Follow this guide from yabai](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
