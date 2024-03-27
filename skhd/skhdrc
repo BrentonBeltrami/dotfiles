@@ -1,39 +1,11 @@
-# Change window focus
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
-
-# Change display focus
-alt - w : yabai -m display --focus west
-alt - b : yabai -m display --focus east
-
-# roate layout clockwise
-shift + alt - r : yabai -m space --rotate 270
-
-# flow windows
-shift + alt - y : yabai -m space --mirror y-axis
-shift + alt - x : yabai -m space --mirror x-axis
-
-# toggle window float 
-# shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
-# reset windows
-# shift + alt - e : yabai -m space --balance
-
-# fullscreen
-shift + alt - f : yabai -m window --toggle zoom-fullscreen
-
-# swap windows
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - h : yabai -m window --swap west
-shift + alt - l : yabai -m window --swap east
-
-# move window to display left and right
-shift + alt - w : yabai -m window --display west; yabai -m display --focus west;
-shift + alt - b : yabai -m window --display east; yabai -m display --focus east;
+cmd + alt + shift - r : yabai --restart-service
 
 # assigned applications
 cmd + alt + shift - v : open /Applications/kitty.app
 cmd + alt + shift - a : open /Applications/arc.app
 cmd + alt + shift - s : open /Applications/Slack.app/
+cmd + alt + shift - z : open /Applications/zoom.us.app/;
+cmd + alt + shift - l : open /Applications/Linear.app;
+
+cmd + alt + shift - m : open -b com.apple.Music;
+cmd + alt + shift - d : open /Applications/discord.app;

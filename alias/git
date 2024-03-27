@@ -1,3 +1,0 @@
-alias gs="clear && git status"
-alias gnew="clear && git co -b"
-alias view="gh pr view --web"
