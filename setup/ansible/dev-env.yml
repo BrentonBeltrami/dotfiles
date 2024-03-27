@@ -2,6 +2,7 @@
   vars:
     brew_cask_packages:
       - raycast
+      - karabiner-elements
     brew_packages:
       - stow
       - koekeishiya/formulae/yabai
@@ -12,8 +13,7 @@
       - neovim
       - lazygit
       - ripgrep
-      - tldr
-      - vale
+      - node
 
     tasks: 
     - name: Installing Homebrew Cask Packages
@@ -22,4 +22,9 @@
     - name: Installing Homebrew Packages
       homebrew:
         name: "{{ brew_packages }}"
+    - name: "Stow files"
+      ansible.buildin.shell: 'stow ~/.config/zsh'
+      ansible.buildin.shell: 'stow ~/.config/bin'
+      ansible.buildin.shell: 'stow -d ~/.config/fonts/ -t ~/Library/Fonts ComisShannsMono'
+      ansible.buildin.shell: 'stow -d ~/.config/fonts/ -t ~/Library/Fonts 3270'
 

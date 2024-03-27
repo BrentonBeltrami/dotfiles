@@ -5,4 +5,8 @@
 [alias]
 	co = checkout
 	br = branch
+  s = !clear && git status
+  new = !clear && git co -b
 	ss = status --short
+	sync = !git fetch upstream && git merge upstream/master && git push
+  caa = commit -a --amend -C HEAD

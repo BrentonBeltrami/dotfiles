@@ -5,28 +5,19 @@ if [[ ! $TERM =~ screen ]]; then
     exec tmux -2
 fi
 
-# source prompt file
 source ~/.config/starship/prompt
 
-# source alias files {{{
-# ==============================================================================
-source ~/.config/alias/vim
-source ~/.config/alias/git
-source ~/.config/alias/tmux
-source ~/.config/alias/shell
-source ~/.config/alias/react
-# source alias files }}}
-# ==============================================================================
+alias ls='ls --color=auto'
+alias v='nvim'
+alias view="gh pr view --web"
 
-# quicly edit config files
-alias zshrc='nvim ~/.zshrc'
-alias vimrc='nvim ~/.config/nvim/init.vim'
+function take {
+    mkdir -p $1
+    cd $1
+}
 
-
-# testing
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules'"
-export EDITOR='/Users/brentonbeltrami/.local/bin/lvim'
-
+export EDITOR='nvim'
 
 #/Users/brentonbeltrami/.local/bin/poetry
 export PATH="/Users/brentonbeltrami/.local/bin:$PATH"
