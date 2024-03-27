@@ -8,9 +8,9 @@
       - koekeishiya/formulae/yabai
       - koekeishiya/formulae/skhd
       - kitty
-      - gh
       - tmux
       - neovim
+      - gh
       - lazygit
       - ripgrep
       - node
@@ -25,6 +25,6 @@
     - name: "Stow files"
       ansible.buildin.shell: 'stow ~/.config/zsh'
       ansible.buildin.shell: 'stow ~/.config/bin'
+      ansible.buildin.shell: 'stow ~/.config/git/'
       ansible.buildin.shell: 'stow -d ~/.config/fonts/ -t ~/Library/Fonts ComisShannsMono'
       ansible.buildin.shell: 'stow -d ~/.config/fonts/ -t ~/Library/Fonts 3270'
-
