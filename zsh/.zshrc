@@ -10,6 +10,7 @@ source ~/.config/starship/prompt
 alias ls='ls --color=auto'
 alias v='nvim'
 alias view="gh pr view --web"
+bindkey -s ^f "tmux-sessionizer\n"
 
 function take {
     mkdir -p $1
