@@ -9,6 +9,7 @@ source ~/.config/starship/prompt
 
 alias ls='ls --color=auto'
 alias v='nvim'
+alias gs="git status"
 alias view="gh pr view --web"
 bindkey -s ^f "tmux-sessionizer\n"
 
