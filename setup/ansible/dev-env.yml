@@ -26,5 +26,5 @@
       ansible.buildin.shell: 'stow ~/.config/zsh'
       ansible.buildin.shell: 'stow ~/.config/bin'
       ansible.buildin.shell: 'stow ~/.config/git/'
-      ansible.buildin.shell: 'stow -d ~/.config/fonts/ -t ~/Library/Fonts ComisShannsMono'
-      ansible.buildin.shell: 'stow -d ~/.config/fonts/ -t ~/Library/Fonts 3270'
+      ansible.buildin.shell: 'cp -r ~/.config/fonts/ComisShannsMono/* ~/Library/Fonts/'
+      ansible.buildin.shell: 'cp -r ~/.config/fonts/3270/* ~/Library/Fonts/'
