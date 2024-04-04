@@ -1,0 +1,28 @@
+#!/bin/bash
+
+folder_structure=$(date +"%Y/%m/%d/")
+folder="$HOME/.todos/$folder_structure"
+mkdir -p "$folder"
+
+current_date_time=$(date +"%Y-%m-%d_%H-%M-%S")
+
+if [[ $1 == "-m" ]]; then
+	if [[ -z $2 ]]; then
+		echo "Error: No message provided with -m flag."
+		exit 1
+	fi
+
+	echo "$2" >"$folder/$current_date_time.txt"
+elif [[ $1 == "--read" ]]; then
+	most_recent_file=$(ls -t "$folder" | head -n 1)
+	if [[ -z $most_recent_file ]]; then
+		echo "Error: No files found in the .todos folder."
+		exit 1
+	fi
+
+	text=$(cat "$folder/$most_recent_file")
+	echo "TODO: $text"
+else
+	touch "$folder/$current_date_time.txt"
+	nvim "$folder/$current_date_time.txt"
+fi

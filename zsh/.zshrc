@@ -21,5 +21,4 @@ function take {
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules'"
 export EDITOR='nvim'
 
-#/Users/brentonbeltrami/.local/bin/poetry
-export PATH="/Users/brentonbeltrami/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
