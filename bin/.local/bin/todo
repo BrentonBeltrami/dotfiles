@@ -12,6 +12,7 @@ if [[ $1 == "-m" ]]; then
 		exit 1
 	fi
 
+	tmux refresh-client -S
 	echo "$2" >"$folder/$current_date_time.txt"
 elif [[ $1 == "--read" ]]; then
 	most_recent_file=$(ls -t "$folder" | head -n 1)
@@ -23,6 +24,6 @@ elif [[ $1 == "--read" ]]; then
 	text=$(cat "$folder/$most_recent_file")
 	echo "TODO: $text"
 else
-	touch "$folder/$current_date_time.txt"
+	tmux refresh-client -S
 	nvim "$folder/$current_date_time.txt"
 fi
