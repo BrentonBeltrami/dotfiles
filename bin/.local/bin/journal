@@ -2,14 +2,18 @@
 
 folder_structure=$(date +"%Y/%m/%d/")
 folder="$HOME/.journal/$folder_structure"
+
 mkdir -p "$folder"
 
-current_date_time=$(date +"%Y-%m-%d")
-today_file="$folder/$current_date_time.md"
-
-if [[ -f $today_file ]]; then
+current_date=$(date +"%Y-%m-%d")
+if [[ $1 == "--question" ]]; then
+	template="$HOME/.journal/templates/question_journal.md"
+	today_file="$folder/$current_date-questions.md"
+	if [[ ! -f $today_file ]]; then
+		cat $template >$today_file
+	fi
 	nvim +"ZenMode" "$today_file"
 else
-	touch "$today_file"
+	today_file="$folder/$current_date.md"
 	nvim +"ZenMode" "$today_file"
 fi
