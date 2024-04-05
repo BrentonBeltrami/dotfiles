@@ -8,8 +8,8 @@ current_date_time=$(date +"%Y-%m-%d")
 today_file="$folder/$current_date_time.md"
 
 if [[ -f $today_file ]]; then
-	nvim "$today_file"
+	nvim +"ZenMode" "$today_file"
 else
 	touch "$today_file"
-	nvim "$today_file"
+	nvim +"ZenMode" "$today_file"
 fi
