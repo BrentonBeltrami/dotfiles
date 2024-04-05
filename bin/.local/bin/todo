@@ -14,6 +14,14 @@ if [[ $1 == "-m" ]]; then
 
 	tmux refresh-client -S
 	echo "$2" >"$folder/$current_date_time.txt"
+elif [[ $1 == "-e" ]]; then
+	most_recent_file=$(ls -t "$folder" | head -n 1)
+	if [[ -z $most_recent_file ]]; then
+		echo "Error: No files found in the .todos folder."
+		exit 1
+	fi
+
+	nvim "$folder/$most_recent_file"
 elif [[ $1 == "--read" ]]; then
 	most_recent_file=$(ls -t "$folder" | head -n 1)
 	if [[ -z $most_recent_file ]]; then

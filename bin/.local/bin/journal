@@ -1,0 +1,15 @@
+#!/bin/bash
+
+folder_structure=$(date +"%Y/%m/%d/")
+folder="$HOME/.journal/$folder_structure"
+mkdir -p "$folder"
+
+current_date_time=$(date +"%Y-%m-%d")
+today_file="$folder/$current_date_time.md"
+
+if [[ -f $today_file ]]; then
+	nvim "$today_file"
+else
+	touch "$today_file"
+	nvim "$today_file"
+fi

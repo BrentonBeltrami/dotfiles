@@ -12,6 +12,8 @@ alias v='nvim'
 alias gs="git status"
 alias view="gh pr view --web"
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^t "todo\n"
+bindkey -s ^n "journal\n"
 
 function take {
     mkdir -p $1
