@@ -15,5 +15,6 @@ if [[ $1 == "--question" ]]; then
 	nvim +"ZenMode" "$today_file"
 else
 	today_file="$folder/$current_date.md"
+	echo "# $(date +'%H:%M')" >>"$today_file"
 	nvim +"ZenMode" "$today_file"
 fi
