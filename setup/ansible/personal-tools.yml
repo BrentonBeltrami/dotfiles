@@ -7,7 +7,7 @@
       - discord
     brew_packages:
       - selfcontrol
-
+      - terminal-notifier
     tasks: 
     - name: Installing Homebrew Cask Packages
       homebrew_cask:
