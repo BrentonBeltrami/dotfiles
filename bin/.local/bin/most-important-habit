@@ -1,0 +1,24 @@
+#!/bin/bash
+folder_structure=$(date +"%Y/%m/%d/")
+folder="$HOME/.journal/$folder_structure"
+
+mkdir -p "$folder"
+
+current_date=$(date +"%Y-%m-%d")
+today_file="$folder/$current_date-questions.md"
+
+if [[ ! -f $today_file ]]; then
+	echo "Exercised: NO"
+fi
+
+search_string="# Did you exercise?"
+
+line_number=$(grep -n "$search_string" "$today_file" | cut -d: -f1)
+next_line_number=$((line_number + 1))
+next_line=$(awk "NR==$next_line_number" "$today_file")
+
+if [ -n "$next_line" ]; then
+	echo "Exercised: $next_line"
+else
+	echo "Exercised: NO"
+fi
