@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Get list of tmux sessions
+sessions=$(tmux ls)
+
+# Loop through each session
+while IFS= read -r session; do
+	# Extract session name and session ID
+	session_name=$(echo "$session" | cut -d ':' -f 1)
+	session_id=$(echo "$session" | cut -d ':' -f 1 | sed 's/%//g')
+
+	# Check if session name is a number
+	if [[ $session_name =~ ^[0-9]+$ ]]; then
+		# Kill the session
+		tmux kill-session -t "$session_id"
+		echo "Killed session: $session_name"
+	fi
+done <<<"$sessions"

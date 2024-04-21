@@ -23,11 +23,18 @@ elif [[ $1 == "-e" ]]; then
 
 	nvim "$folder/$most_recent_file"
 elif [[ $1 == "--read" ]]; then
-	# TODO: Decide if this is a feature or a bug. Should we show yesterdays todo?
+	# TODO: Decide if this is a feature or a bug. Should it show yesterdays todo?
 	most_recent_file=$(ls -t "$folder" | head -n 1)
 	if [[ -z $most_recent_file ]]; then
-		echo "Error: No files found in the .todos folder."
-		exit 1
+
+		current_date_time=$(date +"%S")
+		if [ $((current_date_time % 2)) -eq 0 ]; then
+			echo "Error: No files found in the .todos folder."
+			exit 1
+		else
+			echo ""
+			exit 1
+		fi
 	fi
 
 	text=$(cat "$folder/$most_recent_file")
