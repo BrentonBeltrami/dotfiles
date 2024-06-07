@@ -13,7 +13,7 @@ alias gs="git status"
 alias view="gh pr view --web"
 alias clean="kill-unnamed-sessions"
 bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s ^t "todo\n"
+bindkey -s ^t "todo-toolbar\n"
 bindkey -s ^n "journal\n"
 
 function take {
