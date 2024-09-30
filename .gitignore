@@ -25,3 +25,7 @@
 
 # ingore copilot keys
 /github-copilot/hosts.json
+/github-copilot/apps.json
+
+# Ignore stripe keys
+/stripe/
