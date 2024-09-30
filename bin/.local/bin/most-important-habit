@@ -8,13 +8,20 @@ current_date=$(date +"%Y-%m-%d")
 today_file="$folder/$current_date-questions.md"
 
 if [[ ! -f $today_file ]]; then
-	echo "Exercised: NO"
+	current_date_time=$(date +"%S")
+	if [ $((current_date_time % 2)) -eq 0 ]; then
+		echo "Exercised: No"
+		exit 1
+	else
+		echo "Exercised:   "
+		exit 1
+	fi
 fi
 
 search_string="# Did you exercise?"
 
 line_number=$(grep -n "$search_string" "$today_file" | cut -d: -f1)
-next_line_number=$((line_number + 1))
+next_line_number=$((line_number + 2))
 next_line=$(awk "NR==$next_line_number" "$today_file")
 
 if [ -n "$next_line" ]; then
