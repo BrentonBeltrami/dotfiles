@@ -1,9 +1,12 @@
-alias tmux='tmux -2'
-# launch tmux on start
-tmux attach &> /dev/null
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux -2
-fi
+# alias tmux='tmux -2'
+# # launch tmux on start
+# tmux attach &> /dev/null
+# if [[ ! $TERM =~ screen ]]; then
+#     exec tmux -2
+# fi
+
+alias advent='NVIM_APPNAME=nvim_advent nvim'
+
 
 source ~/.config/starship/prompt
 
@@ -56,3 +59,7 @@ eval "$(direnv hook zsh)"
 
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
+eval "$(~/.local/bin/mise activate zsh)"
+
+# bun completions
+[ -s "/Users/brentonbeltrami/.bun/_bun" ] && source "/Users/brentonbeltrami/.bun/_bun"
