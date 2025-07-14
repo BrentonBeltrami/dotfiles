@@ -5,11 +5,13 @@
 [alias]
 	co = checkout
 	br = branch
-  s = !clear && git status
-  new = !clear && git co -b
+	s = !clear && git status
+	new = !clear && git co -b
 	ss = status --short
 	sync = !git fetch upstream && git merge upstream/master && git push
-  update = "!f() { if [ $(git rev-parse --is-bare-repository) = true ]; then git fetch origin main:refs/heads/main; fi; }; f"
-  caa = commit -a --amend -C HEAD
+	update = "!f() { if [ $(git rev-parse --is-bare-repository) = true ]; then git fetch origin main:refs/heads/main; fi; }; f"
+	caa = commit -a --amend -C HEAD
 [http]
 	postBuffer = 524288000
+[core]
+	excludesfile = /Users/brentonbeltrami/.gitignore_global

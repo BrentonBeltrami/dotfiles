@@ -7,6 +7,8 @@ vim.api.nvim_set_keymap("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<CR>",
 vim.api.nvim_set_keymap("n", "<C-t>", ":silent !tmux neww todo-toolbar<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-n>", ":silent !tmux neww journal<CR>", { silent = true })
 
+vim.keymap.set("n", "<leader>cc", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude Code" })
+
 wk.register({
   z = { name = "Zen Mode", m = { "<cmd>ZenMode<CR>", "Zen mode" } },
 }, { prefix = "<leader>" })

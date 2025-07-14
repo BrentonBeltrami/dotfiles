@@ -12,17 +12,33 @@ xcode-select --install
 ```
 git clone https://github.com/BrentonBeltrami/dotfiles
 ```
-## Install & Run ansible
-```
-brew install ansible
-```
-```
-ansible-playbook ~/.config/setup/setup.yml
+
+## Dev Environment
+
+### Homebrew Cask Packages
+```bash
+brew install --cask karabiner-elements
+brew install --cask aerospace
 ```
 
-## Log into gh
+### Homebrew Packages
+```bash
+brew install stow
+brew install kitty
+brew install tmux
+brew install neovim
+brew install gh
+brew install lazygit
+brew install ripgrep
+brew install node
+brew install starship
 ```
-gh auth login
+
+## Setup Tasks
+
+### Symlinks with Stow
+```bash
+stow ~/.config/zsh
+stow ~/.config/bin
+stow ~/.config/git/
 ```
-## Setup yabai
-[Follow this guide from yabai](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
