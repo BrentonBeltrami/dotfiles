@@ -19,12 +19,12 @@ git clone https://github.com/BrentonBeltrami/dotfiles
 ```bash
 brew install --cask karabiner-elements
 brew install --cask aerospace
+brew install --cask ghostty
 ```
 
 ### Homebrew Packages
 ```bash
 brew install stow
-brew install kitty
 brew install tmux
 brew install neovim
 brew install gh

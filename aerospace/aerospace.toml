@@ -38,7 +38,7 @@ alt-shift-cmd-j = 'focus down'
 alt-shift-cmd-k = 'focus up'
 alt-shift-cmd-l = 'focus right'
 
-alt-shift-cmd-v = 'exec-and-forget open -a /Applications/kitty.app'
+alt-shift-cmd-v = 'exec-and-forget open -a /Applications/Ghostty.app/'
 # alt-shift-cmd-s = 'exec-and-forget open -a /Applications/Slack.app'
 alt-shift-cmd-a = 'exec-and-forget open -a /Applications/Arc.app'
 # alt-shift-cmd-d = 'exec-and-forget open -a /Applications/Discord.app'
