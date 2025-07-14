@@ -17,7 +17,7 @@ stty -ixon
 
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules'"
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.local/bin:$PATH"
 
 # Node manager fnm
 eval "$(fnm env --use-on-cd)"
