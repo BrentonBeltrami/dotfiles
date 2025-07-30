@@ -18,7 +18,7 @@ git clone https://github.com/BrentonBeltrami/dotfiles
 ### Homebrew Cask Packages
 ```bash
 brew install --cask karabiner-elements
-brew install --cask aerospace
+brew install --cask nikitabobko/tap/aerospace
 brew install --cask ghostty
 ```
 
@@ -38,7 +38,9 @@ brew install starship
 
 ### Symlinks with Stow
 ```bash
-stow ~/.config/zsh
-stow ~/.config/bin
-stow ~/.config/git/
+cd ~/.config 
+
+stow zsh
+stow bin
+stow git
 ```
