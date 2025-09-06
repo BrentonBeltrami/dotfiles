@@ -9,7 +9,7 @@
 	new = !clear && git co -b
 	ss = status --short
 	sync = !git fetch upstream && git merge upstream/master && git push
-	update = "!f() { if [ $(git rev-parse --is-bare-repository) = true ]; then git fetch origin main:refs/heads/main; fi; }; f"
+	update = "!if [ $(git rev-parse --is-bare-repository) = true ]; then git fetch origin main:refs/heads/main; elif [ -f .git ] && grep -q gitdir: .git; then git fetch origin main; fi"
 	caa = commit -a --amend -C HEAD
 [http]
 	postBuffer = 524288000
